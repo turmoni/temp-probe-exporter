@@ -1,0 +1,17 @@
+# Required config: sensor ID to 'location' mapping.
+#sensor_mappings:
+#    28FF86AAA11604D7: desk
+#    28FF0AB492160574: outside_desk
+#    28FFD300931604B3: bedroom
+# This is the default, outside of the standard range because this is too silly
+# to warrant claiming a number in the real range.
+#exporter_port: 8104
+
+####################################
+## Configure one of the following ##
+####################################
+# For a serial setup:
+#method: serial
+#serial_port: /dev/ttyACM0
+# For a Linux setup:
+#method: w1

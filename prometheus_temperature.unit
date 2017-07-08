@@ -1,0 +1,10 @@
+[Unit]
+Description=1-Wire temperature exporter for Prometheus
+
+[Service]
+WorkingDirectory=/home/pi
+ExecStart=/home/pi/prometheus_temperature.py /home/pi/prometheus_temperature.yaml
+User=pi
+
+[Install]
+WantedBy=multi-user.target
