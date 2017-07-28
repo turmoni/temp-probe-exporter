@@ -71,10 +71,13 @@ def read_w1(onewire_temperature_c, sensor_mappings):
             therm_contents = therm_file.read()
             therm_file.seek(0)
 
-            m = re.search('t=(\d{5})$', therm_contents)
+            m = re.search(r't=(\d{5})$', therm_contents)
             if m:
                 temperature = (m.group(1) / 1000)
-                onewire_temperature_c.labels(location=sensor_mappings[device_id]).set(temperature)
+                # A reading of 85000 seems to mean "it's not working". If you actually want to
+                # measure things that are 85°C, then my apologies.
+                if temperature != 85:
+                    onewire_temperature_c.labels(location=sensor_mappings[device_id]).set(temperature)
 
         time.sleep(1)
 
