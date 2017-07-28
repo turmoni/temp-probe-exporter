@@ -27,7 +27,7 @@ To attach 1-Wire sensors to the Arduino, simply do the following:
 
 If you want to use a different data pin or change the precision, then this can be changed via
 ```#define```s at the top of the file. Also, if you want to try using more than 20 sensors (note:
-the most I've attempted is 2) then you'll need to make the ```probes``` array bigger.
+the most I've attempted is 3) then you'll need to make the ```probes``` array bigger.
 
 To test that it's working, attach to the serial port exposed by the Arduino. It should be printing
 out temperature readings.
