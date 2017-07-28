@@ -6,7 +6,7 @@ There are two core pieces here:
 * An Arduino sketch to query sensors
 * A Python Prometheus exporter for sensor data, either from an Arduino, or running directly on a
   Raspberry Pi
-** This has been tested with Python 2.7 (w1) and 3.6 (serial), requires yaml and pyserial
+    * This has been tested with Python 2.7 (w1) and 3.6 (serial), requires yaml and pyserial
 
 Note that I am assuming familiarity with Prometheus, learning how to configure it is outside of the
 scope of this project (but isn't all that difficult to do for a trivial configuration).
