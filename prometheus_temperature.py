@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# coding=utf8
 """Prometheus monitoring for temperatures via an Arduino"""
 
 from __future__ import print_function
