@@ -74,7 +74,7 @@ def read_w1(onewire_temperature_c, sensor_mappings):
 
             m = re.search(r't=(\d{5})$', therm_contents)
             if m:
-                temperature = (float(m.group(1) / 1000))
+                temperature = (float(m.group(1)) / 1000)
                 # A reading of 85000 seems to mean "it's not working". If you actually want to
                 # measure things that are 85°C, then my apologies.
                 if temperature != 85:
