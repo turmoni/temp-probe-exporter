@@ -45,7 +45,7 @@ def read_serial(onewire_temperature_c, sensor_mappings, serial_port):
     ser = serial.Serial(serial_port, timeout=60)
     while 1:
         line = ser.readline()
-        m = re.match(r'([A-Z0-9]{16}):([0-9.]+)\n', line.decode('ascii'))
+        m = re.match(r'([A-Z0-9]{16}):(-?[0-9.]+)\n', line.decode('ascii'))
         if m:
             onewire_temperature_c.labels(location=sensor_mappings[m.group(1)]).set(m.group(2))
 
@@ -72,7 +72,7 @@ def read_w1(onewire_temperature_c, sensor_mappings):
             therm_contents = therm_file.read()
             therm_file.seek(0)
 
-            m = re.search(r't=(\d{5})$', therm_contents)
+            m = re.search(r't=(-?\d{5})$', therm_contents)
             if m:
                 temperature = (float(m.group(1)) / 1000)
                 # A reading of 85000 seems to mean "it's not working". If you actually want to
